@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-DOM</title>
+
+    <style>
+        #container{
+            height: 50px;
+            width: 400px;
+            background-color: yellowgreen;
+            position: relative;
+        }
+        #main{
+            height: 45px;
+            width: 350px;
+            float: left ;
+        }
+    </style>
+</head>
+<body>
+    <div id = 'container'>
+        <input type="text" placeholder=" Add some todo..." id = 'main'>
+        <button onclick="myfunction()" id ='button' style="height: 45px;">ADD</button>
+    </div>
+
+    <div id = 'list_div'>
+        <h1> This is your TODO List</h1>
+    </div>
+    <script>
+        function myfunction(){
+            let todo = document.createElement('h3');
+            let value = document.getElementById('main').value;
+            let node = document.createTextNode(value);
+            todo.appendChild(node)
+            let elem  = document.getElementById('list_div');
+            elem.appendChild(todo);
+            document.getElementById('main').value=''
+        }
+    </script>
+</body>
+</html>
